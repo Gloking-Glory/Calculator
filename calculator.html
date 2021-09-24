@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <style>
+            #container {
+                border-radius: 5%;
+                align-content: center;
+                background-color: rgb(15,48,65);
+                text-align: center;
+                height: 310pt;
+                width: 210pt;
+            }
+            
+           #num {
+               font-family: sans-serif;
+               font-size: 1.8em;
+               font-weight: bolder;
+               background-color: rgb(116,170,147);
+               border-radius: 15% 15% 0% 0%;
+               margin-top: 15pt;
+               border: none;
+               height: 40pt;
+               width: 190pt;
+           }
+
+           button {
+                margin-top: 10pt;
+                background-color: orange;
+                border-radius: 30%;
+                font-size: 1.5em;
+                font-weight: 900;
+                border: none;
+                color: black;
+                height: 35pt;
+                width: 45pt;
+           }
+
+           #result {
+               border-radius: 10%;
+               width: 90pt;
+           }
+
+           #finalresult {
+                font-family: sans-serif;
+               font-size: 1.8em;
+               font-weight: bolder;
+               background-color: rgb(116,170,147);
+               border-radius: 0% 0% 15% 15%;
+               margin-top: 15pt;
+               border: none;
+               height: 20pt;
+               width: 190pt;
+               text-align: right;
+               margin-top: 0;
+               
+           }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <input type="text" id="num">
+            <input type="text" id="finalresult">
+
+            <div id="numcontainer">
+
+                <button onclick="num.value += '7' ">7</button>
+                <button onclick="num.value += '8' ">8</button>
+                <button onclick="num.value += '9' ">9</button>
+
+                <button onclick="num.value += '*' ">x</button> <br>
+
+                <button onclick="num.value += '4' ">4</button>
+                <button onclick="num.value += '5' ">5</button>
+                <button onclick="num.value += '6' ">6</button>
+                
+                <button onclick="num.value += '+' ">+</button> <br>
+                
+                <button onclick="num.value += '1' ">1</button>
+                <button onclick="num.value += '2' ">2</button>
+                <button onclick="num.value += '3' ">3</button>
+
+                <button onclick="num.value += '-' ">-</button> <br> 
+                
+                <button onclick="num.value += '0' ">0</button>
+                <button onclick="num.value += '.' ">.</button>
+                <button onclick="num.value += '00' ">00</button>
+
+                <button onclick="num.value += '/' ">/</button> <br>
+                <button id="result" onclick="result()">=</button>
+                <button onclick="num.value = ' ', finalresult.value = ' ' ">CE</button>
+                <button onclick="num.value = num.value.substring(0, num.value.length-1)">Del</button>
+
+                
+    <!-- ANOTHER DIMENSION FOR DELETE -->
+                <!-- <button onclick="delet()">Del</button> -->
+
+    <!-- USING ADD to concatenate  -->
+                <!-- <button onclick="add1()">1</button>
+                <button onclick="add2()">2</button> -->
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+        
+            const result = ()=> {
+                finalresult.value = eval(num.value);
+            }
+
+    // USING ADD to concatenate
+            // const add1 = ()=> {
+            //     num.value = num.value + 1; or num.value += 1;
+            // }
+            // const add2 = ()=> {
+            //     num.value = num.value + 2;
+            // }
+        
+    // DELETE USING SLICE
+            // const delet = ()=> {
+            //     dell = num.value;
+            //     num.value = dell.slice(0, -1)
+            // }
+        </script>
+        
+    </body>
+</html>
